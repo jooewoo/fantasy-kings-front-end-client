@@ -13,5 +13,64 @@
     </head>
     <body>
       <h1>Browser Template</h1>
+      <nav class="navbar">
+        <div class="picture">
+          <!-- <img src="./public/teams/nfl-icon.png" alt="nfl-icon" height="75" width="75"> -->
+          <!-- <h1>NFL Tic Tac Toe</h1> -->
+        </div>
+
+        <div class="btn-group">
+          <div id="sign-up-form-dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-up" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign Up!
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-up">
+              <form id="sign-up-form">
+                <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
+                <input name="credentials[password]" type="password" id="password" placeholder="password">
+                <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
+                <input type="submit" placeholder="Submit">
+              </form>
+            </div>
+          </div>
+
+          <div id="sign-in-form-dropdown">
+            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sign In
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-in">
+              <form id="sign-in-form">
+                <input name="credentials[email]" type="text" placeholder="email@email.com">
+                <input name="credentials[password]" type="password" placeholder="password">
+                <input type="submit" placeholder="Submit">
+              </form>
+            </div>
+          </div>
+
+          <div class="btn-group-1">
+            <div id="change-password-dropdown" class="hidden">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change Password
+              </button>
+
+              <div class="dropdown-menu dropdown-menu-right">
+                <form id="change-password-form">
+                  <input name="passwords[old]" type="password" placeholder="old password"/>
+                  <input name="passwords[new]" type="password" placeholder="new password"/>
+                  <input type="submit" placeholder="Submit"/>
+                </form>
+              </div>
+            </div>
+
+            <div id="sign-out-button" class="hidden">
+              <button type="button" class="btn btn-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                Sign Out
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </nav>
     </body>
 </html>
