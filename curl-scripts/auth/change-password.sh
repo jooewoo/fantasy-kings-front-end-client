@@ -1,4 +1,4 @@
-curl "https://git.heroku.com/guarded-taiga-82563.git/change-password" \
+curl "https://guarded-taiga-82563.herokuapp.com/change-password" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
