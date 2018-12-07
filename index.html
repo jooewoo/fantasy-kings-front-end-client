@@ -70,9 +70,49 @@
 
           </div>
         </div>
-
       </nav>
 
-      <div id="game-message">Game message</div>
+      <div id="player-message">Player message</div>
+
+      <div id="show-players-button">
+        <button id="show-players-button" type="button">
+          Show All Player
+        </button>
+      </div>
+
+      <div class="create-player-form">
+        <form id="create-player-form">Create Player <br>
+          <input name="player[first_name]" type="text" id="first_name" class="player" placeholder="first_name">
+          <input name="player[last_name]" type="text" id="last_name" class="player" placeholder="last_name">
+          <input name="player[personal_info]" type="text" id="personal_info" class="player" placeholder="personal_info">
+          <input name="player[team]" type="text" id="team" class="player" placeholder="team">
+          <input name="player[stats]" type="text" id="stats" class="player" placeholder="stats">
+          <input name="player[league]" type="text" id="league" class="player" placeholder="league">
+          <input type="submit" class="create-player-form" placeholder="Submit">
+        </form>
+      </div>
+
+      <div class="get-player-form">
+        <form id="get-player-form">Get Player <br>
+          <input name="player[id]" type="text" id="player_id" class="player" placeholder="player_id">
+          <input type="submit" class="get-player-form" placeholder="Submit">
+        </form>
+      </div>
+
+      <div class="update-player-form">
+        <form id="update-player-form">Update Player <br>
+          <input name="id" type="text" class="id" class="player" placeholder="id">
+          <input name="player[first_name]" type="text" class="first_name" class="player" placeholder="first_name">
+          <input name="player[last_name]" type="text" class="last_name" class="player" placeholder="last_name">
+          <input name="player[personal_info]" type="text" class="personal_info" class="player" placeholder="personal_info">
+          <input name="player[team]" type="text" class="team" class="player" placeholder="team">
+          <input name="player[stats]" type="text" class="stats" class="player" placeholder="stats">
+          <input name="player[league]" type="text" class="league" class="player" placeholder="league">
+          <input type="submit" class="update-player-form" placeholder="Submit">
+        </form>
+      </div>
+
+      <div id="content" class="content">Content</div>
+
     </body>
 </html>

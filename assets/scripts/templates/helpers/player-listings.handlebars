@@ -1,0 +1,15 @@
+{{#each this as |player|}}
+  <!-- {{log player}} -->
+  <!-- {{> players}} -->
+  {{#player}}
+  <div class="players" data-id="{{id}}">
+    <h5> <small>ID: {{id}}</small></h5>
+    <h5> <small>Name: {{first_name}} {{last_name}}</small></h5>
+    <h5> <small>Personal Info: {{personal_info}}</small></h5>
+    <h5> <small>Team: {{team}}</small></h5>
+    <h5> <small>Stats: {{stats}}</small></h5>
+    <h5> <small>League: {{league}}</small></h5>
+  </div>
+  {{/player}}
+
+{{/each}}

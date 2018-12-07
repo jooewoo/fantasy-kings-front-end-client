@@ -7,7 +7,10 @@ const store = require('../store.js')
 
 const onCreatePlayer = (event) => {
   event.preventDefault()
-  api.createPlayer()
+  const playerData = getFormFields(event.target)
+  $(event.target).trigger('reset')
+  console.log(playerData)
+  api.createPlayer(playerData.player)
     .then(ui.createPlayerSuccess)
     .catch(ui.failure)
 }
@@ -16,14 +19,10 @@ const onGetPlayer = (event) => {
   event.preventDefault()
   const playerData = getFormFields(event.target)
   $(event.target).trigger('reset')
-  if (playerData === '') {
-    $('#game-message').html('Please enter an ID')
-  } else {
-    $('#game-message').addClass('hidden')
-    api.getGame(playerData)
-      .then(ui.getPlayerSuccess)
-      .catch(ui.failure)
-  }
+  console.log(playerData)
+  api.getPlayer(playerData.player.id)
+    .then(ui.getPlayerSuccess)
+    .catch(ui.failure)
 }
 
 const onShowAllPlayers = (event) => {
@@ -35,20 +34,20 @@ const onShowAllPlayers = (event) => {
 }
 
 const onUpdatePlayer = (event) => {
-  const value = store.player
-  const id = $(event.target).data().cellIndex
-  const over = store.over
-  const winner = store.winner
-  api.updatePlayer(id, value, over)
-    .then(ui.updatePlayer(id, value, over, winner))
+  event.preventDefault()
+  const playerData = getFormFields(event.target)
+  $(event.target).trigger('reset')
+  console.log(playerData)
+  api.updatePlayer(playerData)
+    .then(ui.updatePlayerSuccess)
     .catch(ui.failure)
 }
 
 const addHandlers = () => {
-  $('#start-game-button').on('click', onCreatePlayer)
-  $('#previous-game').on('submit', onGetPlayer)
-  $('#show-games-button').on('click', onShowAllPlayers)
-  $('.box').on('click', onUpdatePlayer)
+  $('#create-player-form').on('submit', onCreatePlayer)
+  $('#get-player-form').on('submit', onGetPlayer)
+  $('#show-players-button').on('click', onShowAllPlayers)
+  $('#update-player-form').on('submit', onUpdatePlayer)
 }
 
 // const choosePlayerIcon = function (event) {
