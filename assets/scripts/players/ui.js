@@ -17,7 +17,15 @@ const getPlayerSuccess = (playerData) => {
 }
 
 const updatePlayerSuccess = (playerData) => {
-  $('#content').html('you have successfully updated the player')
+  console.log(playerData)
+  const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
+  $('#content').html(showPlayersHtml)
+}
+
+const deletePlayerSuccess = () => {
+  // console.log(playerData)
+  // const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
+  $('#content').html(`You have successfully deleted ${store.playerId}`)
 }
 
 const failure = () => {
@@ -28,5 +36,6 @@ module.exports = {
   showAllPlayersSuccess,
   getPlayerSuccess,
   updatePlayerSuccess,
+  deletePlayerSuccess,
   failure
 }

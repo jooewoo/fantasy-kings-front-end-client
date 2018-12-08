@@ -43,11 +43,23 @@ const onUpdatePlayer = (event) => {
     .catch(ui.failure)
 }
 
+const onDeletePlayer = (event) => {
+  event.preventDefault()
+  const playerData = getFormFields(event.target)
+  $(event.target).trigger('reset')
+  console.log(playerData.player.id)
+  store.playerId = playerData.player.id
+  api.deletePlayer(playerData)
+    .then(ui.deletePlayerSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#create-player-form').on('submit', onCreatePlayer)
   $('#get-player-form').on('submit', onGetPlayer)
   $('#show-players-button').on('click', onShowAllPlayers)
   $('#update-player-form').on('submit', onUpdatePlayer)
+  $('#delete-player-form').on('submit', onDeletePlayer)
 }
 
 // const choosePlayerIcon = function (event) {
@@ -68,5 +80,6 @@ module.exports = {
   onGetPlayer,
   onShowAllPlayers,
   onUpdatePlayer,
+  onDeletePlayer,
   addHandlers
 }

@@ -66,12 +66,12 @@ const updatePlayer = (playerData) => {
     data: JSON.stringify(
       {
         'player': {
-          'first_name': playerData.first_name,
-          'last_name': playerData.last_name,
-          'personal_info': playerData.personal_info,
-          'team': playerData.team,
-          'stats': playerData.stats,
-          'league': playerData.league,
+          'first_name': playerData.player.first_name,
+          'last_name': playerData.player.last_name,
+          'personal_info': playerData.player.personal_info,
+          'team': playerData.player.team,
+          'stats': playerData.player.stats,
+          'league': playerData.player.league,
           'user_id': store.user.id
         }
       }
@@ -79,9 +79,22 @@ const updatePlayer = (playerData) => {
   })
 }
 
+const deletePlayer = (playerData) => {
+  console.log(playerData)
+  return $.ajax({
+    url: config.apiUrl + '/players/' + playerData.player.id,
+    method: 'DELETE',
+    contentType: 'application/json',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
   createPlayer,
   getPlayer,
   showAllPlayers,
-  updatePlayer
+  updatePlayer,
+  deletePlayer
 }
