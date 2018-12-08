@@ -12,8 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Fantasy Basketball Players</h1>
       <nav class="navbar">
+        <h1>Fantasy Basketball</h1>
         <div class="picture">
           <!-- <img src="./public/teams/nfl-icon.png" alt="nfl-icon" height="75" width="75"> -->
           <!-- <h1>NFL Tic Tac Toe</h1> -->
@@ -21,11 +21,11 @@
 
         <div class="btn-group">
           <div id="sign-up-form-dropdown">
-            <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-up" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sign Up!
+            <button type="button" class="btn btn-secondary dropdown-toggle butn" id="sign-up" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Register
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-up">
-              <form id="sign-up-form">
+              <form id="sign-up-form" class="butn">
                 <input name="credentials[email]" type="text" id="email" placeholder="email@email.com">
                 <input name="credentials[password]" type="password" id="password" placeholder="password">
                 <input name="credentials[password_confirmation]" type="password" id="password_confirmation" placeholder="password confirmation">
@@ -36,7 +36,7 @@
 
           <div id="sign-in-form-dropdown">
             <button type="button" class="btn btn-secondary dropdown-toggle" id="sign-in" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sign In
+              Login
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sign-in">
               <form id="sign-in-form">
@@ -48,13 +48,13 @@
           </div>
 
           <div class="btn-group-1">
-            <div id="change-password-dropdown" class="hidden">
+            <div id="change-password-dropdown" class=" change-password-dropdown hidden">
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Change Password
               </button>
 
               <div class="dropdown-menu dropdown-menu-right">
-                <form id="change-password-form">
+                <form id="change-password-form" class="sign-out-button hidden">
                   <input name="passwords[old]" type="password" placeholder="old password"/>
                   <input name="passwords[new]" type="password" placeholder="new password"/>
                   <input type="submit" placeholder="Submit"/>
@@ -62,8 +62,8 @@
               </div>
             </div>
 
-            <div id="sign-out-button" class="hidden">
-              <button type="button" class="btn btn-secondary dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            <div id="sign-out-button" class="sign-out-button hidden">
+              <button type="button" class="btn btn-secondary toggle" aria-haspopup="true" aria-expanded="false">
                 Sign Out
               </button>
             </div>
@@ -72,54 +72,67 @@
         </div>
       </nav>
 
-      <div id="player-message">Player message</div>
+      <div class="big-body">
+          <div class="sidebar">
+            <div>Season</div>
+            <div>My Team</div>
+            <div>Players</div>
+            <div>Season Averages</div>
+            <div>Season Totals</div>
+          </div>
 
-      <div id="show-players-button">
-        <button id="show-players-button" type="button">
-          Show All Player
-        </button>
+          <div class="main-body">
+            <div id="player-message">Player message</div>
+
+            <div id="show-players-button" class="show-players-button">
+              <button id="show-players-button-id" class="show-players-button" type="button">
+                Show All Player
+              </button>
+            </div>
+
+            <div class="create-player-form">
+              <form id="create-player-form">Create Player <br>
+                <input name="player[first_name]" type="text" id="first_name" class="player" placeholder="first_name">
+                <input name="player[last_name]" type="text" id="last_name" class="player" placeholder="last_name">
+                <input name="player[personal_info]" type="text" id="personal_info" class="player" placeholder="personal_info">
+                <input name="player[team]" type="text" id="team" class="player" placeholder="team">
+                <input name="player[stats]" type="text" id="stats" class="player" placeholder="stats">
+                <input name="player[league]" type="text" id="league" class="player" placeholder="league">
+                <input type="submit" class="create-player-form" placeholder="Submit">
+              </form>
+            </div>
+
+            <div class="get-player-form">
+              <form id="get-player-form">Get Player <br>
+                <input name="player[id]" type="text" id="player_id" class="player" placeholder="player_id">
+                <input type="submit" class="get-player-form" placeholder="Submit">
+              </form>
+            </div>
+
+            <div class="update-player-form">
+              <form id="update-player-form">Update Player <br>
+                <input name="id" type="text" class="id" class="player" placeholder="id">
+                <input name="player[first_name]" type="text" class="first_name" class="player" placeholder="first_name">
+                <input name="player[last_name]" type="text" class="last_name" class="player" placeholder="last_name">
+                <input name="player[personal_info]" type="text" class="personal_info" class="player" placeholder="personal_info">
+                <input name="player[team]" type="text" class="team" class="player" placeholder="team">
+                <input name="player[stats]" type="text" class="stats" class="player" placeholder="stats">
+                <input name="player[league]" type="text" class="league" class="player" placeholder="league">
+                <input type="submit" class="update-player-form" placeholder="Submit">
+              </form>
+            </div>
+
+            <div class="delete-player-form">
+              <form id="delete-player-form">Delete Player <br>
+                <input name="player[id]" type="text" class="player_id" class="player" placeholder="player_id">
+                <input type="submit" class="delete-player-form" placeholder="Submit">
+              </form>
+            </div>
+
+            <div id="content" class="content">Content</div>
+          </div>
       </div>
 
-      <div class="create-player-form">
-        <form id="create-player-form">Create Player <br>
-          <input name="player[first_name]" type="text" id="first_name" class="player" placeholder="first_name">
-          <input name="player[last_name]" type="text" id="last_name" class="player" placeholder="last_name">
-          <input name="player[personal_info]" type="text" id="personal_info" class="player" placeholder="personal_info">
-          <input name="player[team]" type="text" id="team" class="player" placeholder="team">
-          <input name="player[stats]" type="text" id="stats" class="player" placeholder="stats">
-          <input name="player[league]" type="text" id="league" class="player" placeholder="league">
-          <input type="submit" class="create-player-form" placeholder="Submit">
-        </form>
-      </div>
-
-      <div class="get-player-form">
-        <form id="get-player-form">Get Player <br>
-          <input name="player[id]" type="text" id="player_id" class="player" placeholder="player_id">
-          <input type="submit" class="get-player-form" placeholder="Submit">
-        </form>
-      </div>
-
-      <div class="update-player-form">
-        <form id="update-player-form">Update Player <br>
-          <input name="id" type="text" class="id" class="player" placeholder="id">
-          <input name="player[first_name]" type="text" class="first_name" class="player" placeholder="first_name">
-          <input name="player[last_name]" type="text" class="last_name" class="player" placeholder="last_name">
-          <input name="player[personal_info]" type="text" class="personal_info" class="player" placeholder="personal_info">
-          <input name="player[team]" type="text" class="team" class="player" placeholder="team">
-          <input name="player[stats]" type="text" class="stats" class="player" placeholder="stats">
-          <input name="player[league]" type="text" class="league" class="player" placeholder="league">
-          <input type="submit" class="update-player-form" placeholder="Submit">
-        </form>
-      </div>
-
-      <div class="delete-player-form">
-        <form id="delete-player-form">Delete Player <br>
-          <input name="player[id]" type="text" class="player_id" class="player" placeholder="player_id">
-          <input type="submit" class="delete-player-form" placeholder="Submit">
-        </form>
-      </div>
-
-      <div id="content" class="content">Content</div>
 
     </body>
 </html>

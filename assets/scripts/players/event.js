@@ -57,23 +57,10 @@ const onDeletePlayer = (event) => {
 const addHandlers = () => {
   $('#create-player-form').on('submit', onCreatePlayer)
   $('#get-player-form').on('submit', onGetPlayer)
-  $('#show-players-button').on('click', onShowAllPlayers)
+  $('#show-players-button-id').on('click', onShowAllPlayers)
   $('#update-player-form').on('submit', onUpdatePlayer)
   $('#delete-player-form').on('submit', onDeletePlayer)
 }
-
-// const choosePlayerIcon = function (event) {
-//   const hasClass = $(event.target).hasClass('player1')
-//   let playerIcon = null
-//   if (hasClass) {
-//     playerIcon = 'player1'
-//   } else {
-//     playerIcon = 'player2'
-//   }
-//   const newIcon = config.imgUrl[playerIcon] = event.target.src
-//   config.iconNames[playerIcon] = event.target.id
-//   ui.changePlayerIcon(newIcon, playerIcon)
-// }
 
 module.exports = {
   onCreatePlayer,

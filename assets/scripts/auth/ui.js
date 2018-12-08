@@ -13,6 +13,8 @@ const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
   // console.log(store)
   $('#player-message').html('You signed in successfully')
+  $('#change-password-dropdown, #sign-out-button').show()
+  $('#sign-up-form-dropdown, #sign-in-form-dropdown').hide()
 }
 
 const changePasswordSuccess = () => {
@@ -21,6 +23,8 @@ const changePasswordSuccess = () => {
 
 const signOutSuccess = () => {
   $('#player-message').html('You signed out successfully')
+  $('#change-password-dropdown, #sign-out-button').hide()
+  $('#sign-up-form-dropdown, #sign-in-form-dropdown').show()
 }
 
 const failure = (failureResponse) => {

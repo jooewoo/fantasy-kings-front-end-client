@@ -1,5 +1,31 @@
 @import '~bootstrap/scss/bootstrap';
 
+.navbar {
+  background-color: black;
+}
+
+.big-body {
+  border: 1px solid black;
+  display: flex;
+  width: 100%;
+  // flex-direction: column;
+}
+
+.sidebar {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+.main-body {
+  width: 85%;
+}
+
+h1 {
+  color: #fff;
+}
+
 .players {
   border: 1px solid blue;
 }
