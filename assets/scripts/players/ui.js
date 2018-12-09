@@ -4,6 +4,13 @@ const showPlayersTemplate = require('../templates/helpers/player-listings.handle
 // const handlebars = require('handlebars')
 // const config = require('../config.js')
 
+const createPlayerSuccess = (playerData) => {
+  console.log(playerData)
+  store.player = playerData.player
+  const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
+  $('#content').html(showPlayersHtml)
+}
+
 const showAllPlayersSuccess = (playerData) => {
   store.players = playerData.players
   const showPlayersHtml = showPlayersTemplate({ players: playerData.players })
@@ -33,6 +40,7 @@ const failure = () => {
 }
 
 module.exports = {
+  createPlayerSuccess,
   showAllPlayersSuccess,
   getPlayerSuccess,
   updatePlayerSuccess,
