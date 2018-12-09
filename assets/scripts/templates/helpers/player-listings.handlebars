@@ -1,15 +1,29 @@
 {{#each this as |player|}}
   <!-- {{log player}} -->
   <!-- {{> players}} -->
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Player</th>
+        <th scope="col">Personal Info</th>
+        <th scope="col">Team</th>
+        <th scope="col">Stats</th>
+      </tr>
+    </thead>
+
   {{#player}}
-  <div class="players" data-id="{{id}}">
-    <div class="player-id">ID: {{id}}</div>
-    <div class="players-name">Name: {{first_name}} {{last_name}}</div>
-    <div class="players-info">Personal Info: {{personal_info}}</div>
-    <div class="players-team">Team: {{team}}</div>
-    <div class="players-stats">Stats: {{stats}}</div>
-    <div class="players-league">League: {{league}}</div>
-  </div>
+    <tbody>
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{first_name}} {{last_name}}</td>
+        <td>{{personal_info}}</td>
+        <td>{{team}}</td>
+        <td>{{stats}}</td>
+      </tr>
+    </tbody>
   {{/player}}
+  </table>
+
 
 {{/each}}

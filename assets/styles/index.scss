@@ -4,6 +4,14 @@
   background-color: black;
 }
 
+.btn-group {
+  display: flex;
+}
+
+.btn-group-1 {
+  display: inline-flex;
+}
+
 .big-body {
   border: 1px solid black;
   display: flex;
@@ -16,6 +24,36 @@
   display: flex;
   flex-direction: column;
   width: 10%;
+
+  .ranking {
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .my-players {
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .all-players {
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .season-averages {
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .season-totals {
+    &:hover {
+      background-color: red;
+    }
+  }
 }
 
 .main-body {

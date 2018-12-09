@@ -57,7 +57,7 @@ const onDeletePlayer = (event) => {
 const addHandlers = () => {
   $('#create-player-form').on('submit', onCreatePlayer)
   $('#get-player-form').on('submit', onGetPlayer)
-  $('#show-players-button-id').on('click', onShowAllPlayers)
+  $('#all-players').on('click', onShowAllPlayers)
   $('#update-player-form').on('submit', onUpdatePlayer)
   $('#delete-player-form').on('submit', onDeletePlayer)
 }
