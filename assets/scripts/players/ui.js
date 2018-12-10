@@ -13,12 +13,13 @@ const createPlayerSuccess = (playerData) => {
 
 const showAllPlayersSuccess = (playerData) => {
   store.players = playerData.players
+  console.log(store)
   const showPlayersHtml = showPlayersTemplate({ players: playerData.players })
   $('#content').html(showPlayersHtml)
 }
 
 const getPlayerSuccess = (playerData) => {
-  store.player = playerData.player
+  store.getPlayer = playerData.player
   const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
   $('#content').html(showPlayersHtml)
 }
@@ -30,9 +31,10 @@ const updatePlayerSuccess = (playerData) => {
 }
 
 const deletePlayerSuccess = () => {
-  // console.log(playerData)
-  // const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
-  $('#content').html(`You have successfully deleted ${store.playerId}`)
+  console.log(store)
+  const showPlayersHtml = showPlayersTemplate({ players: store.players })
+  $('#content').html(showPlayersHtml)
+  // $('#content').html(`You have successfully deleted ${store.playerId}`)
 }
 
 const failure = () => {
