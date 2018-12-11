@@ -44,15 +44,14 @@ const getPlayer = (playerId) => {
   })
 }
 
-const showAllPlayers = (playerData) => {
+const showAllStats = () => {
   return $.ajax({
-    url: config.apiUrl + `/players`,
+    url: config.apiUrl + `/stats`,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
-    contentType: 'application/json',
-    data: JSON.stringify(playerData)
+    contentType: 'application/json'
   })
 }
 
@@ -95,7 +94,7 @@ const deletePlayer = (playerData) => {
 module.exports = {
   createPlayer,
   getPlayer,
-  showAllPlayers,
+  showAllStats,
   updatePlayer,
   deletePlayer
 }

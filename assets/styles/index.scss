@@ -1,7 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
 
+.stats-table {
+  max-height: 500px;
+  overflow: scroll;
+  page-break-after: always;
+}
+
 .navbar {
   background-color: black;
+}
+
+.sidebar {
+  height: 800px;
+  text-align: center;
+}
+
+.main-body {
+  text-align: center;
 }
 
 .btn-group {
@@ -37,7 +52,7 @@
     }
   }
 
-  .all-players {
+  .show-stats-button {
     &:hover {
       background-color: red;
     }
@@ -52,6 +67,20 @@
   .season-totals {
     &:hover {
       background-color: red;
+    }
+  }
+
+  .project-2 {
+    &:hover {
+      background-color: red;
+      cursor: pointer;
+    }
+  }
+
+  .project-2-v2 {
+    &:hover {
+      background-color: red;
+      cursor: pointer;
     }
   }
 }

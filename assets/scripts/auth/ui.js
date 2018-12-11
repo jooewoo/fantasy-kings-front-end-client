@@ -26,10 +26,10 @@ const changePasswordSuccess = () => {
 
 const signOutSuccess = () => {
   $('#player-message').html('You signed out successfully')
-  $('div[style*=block]').removeAttr('style')
-  $('#change-password-dropdown, #sign-out-button').addClass('hidden')
+  $('.btn-group-1, .project-requirements').addClass('hidden')
   $('#sign-up-form-dropdown, #sign-in-form-dropdown').show()
   $('#content').empty()
+  $('.change-password-form').trigger('reset')
 }
 
 const failure = (failureResponse) => {
