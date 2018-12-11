@@ -12,9 +12,9 @@ const signUpSuccess = (signUpResponse) => {
 const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
   // console.log(store)
-  $('div[style*=block]').removeAttr('style')
   $('#player-message').html('You signed in successfully')
   $('.btn-group-1, #change-password-dropdown, #sign-out-button').show()
+  $('div[style*=block]').removeAttr('style')
   $('div.btn-group-1').removeClass('hidden')
   $('#sign-up-form-dropdown, #sign-in-form-dropdown').hide()
   $('.btn-group-1').removeClass('hidden')
@@ -26,9 +26,10 @@ const changePasswordSuccess = () => {
 
 const signOutSuccess = () => {
   $('#player-message').html('You signed out successfully')
-  $('#change-password-dropdown, #sign-out-button').addClass('hidden')
+  $('.btn-group-1, .project-requirements').addClass('hidden')
   $('#sign-up-form-dropdown, #sign-in-form-dropdown').show()
   $('#content').empty()
+  $('.change-password-form').trigger('reset')
 }
 
 const failure = (failureResponse) => {

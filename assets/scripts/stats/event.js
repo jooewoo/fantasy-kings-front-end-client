@@ -25,11 +25,11 @@ const onGetPlayer = (event) => {
     .catch(ui.failure)
 }
 
-const onShowAllPlayers = (event) => {
+const onShowAllStats = (event) => {
   event.preventDefault()
   $(event.target).trigger('reset')
-  api.showAllPlayers()
-    .then(ui.showAllPlayersSuccess)
+  api.showAllStats()
+    .then(ui.showAllStatsSuccess)
     .catch(ui.failure)
 }
 
@@ -51,22 +51,21 @@ const onDeletePlayer = (event) => {
   store.playerId = playerData.player.id
   api.deletePlayer(playerData)
     .then(ui.deletePlayerSuccess)
-    .then(() => onShowAllPlayers(event))
     .catch(ui.failure)
 }
 
 const addHandlers = () => {
-  $('#create-player-form').on('submit', onCreatePlayer)
-  $('#get-player-form').on('submit', onGetPlayer)
-  $('#show-players-button-id').on('click', onShowAllPlayers)
-  $('#update-player-form').on('submit', onUpdatePlayer)
-  $('#delete-player-form').on('submit', onDeletePlayer)
+  $('').on('submit', onCreatePlayer)
+  $('').on('submit', onGetPlayer)
+  $('#show-stats-button').on('click', onShowAllStats)
+  $('').on('submit', onUpdatePlayer)
+  $('').on('submit', onDeletePlayer)
 }
 
 module.exports = {
   onCreatePlayer,
   onGetPlayer,
-  onShowAllPlayers,
+  onShowAllStats,
   onUpdatePlayer,
   onDeletePlayer,
   addHandlers
