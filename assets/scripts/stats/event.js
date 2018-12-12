@@ -16,7 +16,7 @@ const onShowAllStats = (event) => {
 const onCreateTeam = (event) => {
   event.preventDefault()
   store.statId = $(event.target).closest('tr').data('id')
-  console.log(store.statId)
+  // console.log(store.statId)
   api.createTeam(store)
     .then(ui.createTeamSuccess)
     .catch(ui.failure)
@@ -24,12 +24,10 @@ const onCreateTeam = (event) => {
 
 const onDeleteTeam = (event) => {
   event.preventDefault()
-  const playerData = getFormFields(event.target)
-  $(event.target).trigger('reset')
-  console.log(playerData.player.id)
-  store.playerId = playerData.player.id
-  api.deletePlayer(playerData)
-    .then(ui.deletePlayerSuccess)
+  store.statId = $(event.target).closest('tr').data('id')
+  // console.log(store.statId)
+  api.deletePlayer(store.statId)
+    .then(ui.deleteTeamSuccess)
     .catch(ui.failure)
 }
 
@@ -42,7 +40,7 @@ const onShowTeam = (event) => {
 
 const addHandlers = () => {
   $('#show-stats-button').on('click', onShowAllStats)
-  $('.content').on('click', '.stats-table', onCreateTeam)
+  $('.content').on('click', '.stats-button', onCreateTeam)
   $('').on('submit', onDeleteTeam)
   $('.my-team').on('click', onShowTeam)
 }

@@ -3,7 +3,7 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const createPlayer = (playerData) => {
-  console.log(playerData)
+  // console.log(playerData)
   return $.ajax({
     url: config.apiUrl + '/players/',
     method: 'POST',
@@ -81,7 +81,7 @@ const updatePlayer = (playerData) => {
 }
 
 const deletePlayer = (playerData) => {
-  console.log(playerData)
+  // console.log(playerData)
   return $.ajax({
     url: config.apiUrl + '/players/' + playerData.player.id,
     method: 'DELETE',

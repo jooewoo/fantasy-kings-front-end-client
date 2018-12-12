@@ -29,6 +29,7 @@ const signOutSuccess = () => {
   $('.btn-group-1, .project-requirements').addClass('hidden')
   $('#sign-up-form-dropdown, #sign-in-form-dropdown').show()
   $('#content').empty()
+  $('.my-fantasy-team').empty()
   $('.change-password-form').trigger('reset')
 }
 

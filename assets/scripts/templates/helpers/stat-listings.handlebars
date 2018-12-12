@@ -1,9 +1,10 @@
 {{#each this as |stat|}}
 
 <div class="all-stats-table">
-  <table class="table table-hover">
+  <table class="table table-hover table-bordered">
     <thead class="thead-dark">
       <tr>
+        <th scope="col"></th>
         <th scope="col">#</th>
         <th scope="col">Player</th>
         <th scope="col">Position</th>
@@ -40,6 +41,8 @@
     {{#stat}}
     <tbody class="all-stats-table">
       <tr class="stats-table" data-id="{{id}}">
+        <td><button class="stats-button" data-id={{id}}><img src="https://img.icons8.com/color/30/000000/star.png" class="on-{{id}}">
+        <img src="https://img.icons8.com/color/30/000000/filled-star.png" class="on  hidden" id="stats-button-{{id}}"></button></td>
         <th scope="row">{{id}}</th>
         <td>{{player}}</td>
         <td>{{position}}</td>

@@ -14,7 +14,7 @@ const showAllStats = () => {
 }
 
 const createTeam = (playerData) => {
-  console.log(playerData)
+  // console.log(playerData)
   return $.ajax({
     url: config.apiUrl + '/teams/',
     method: 'POST',
@@ -34,10 +34,10 @@ const createTeam = (playerData) => {
   })
 }
 
-const deletePlayer = (playerData) => {
-  console.log(playerData)
+const deleteTeam = (playerData) => {
+  // console.log(playerData)
   return $.ajax({
-    url: config.apiUrl + '/players/' + playerData.player.id,
+    url: config.apiUrl + '/teams/' + playerData,
     method: 'DELETE',
     contentType: 'application/json',
     headers: {
@@ -60,6 +60,6 @@ const showTeam = () => {
 module.exports = {
   showAllStats,
   createTeam,
-  deletePlayer,
+  deleteTeam,
   showTeam
 }

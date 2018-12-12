@@ -4,6 +4,7 @@
   <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
+        <th scope="col"></th>
         <th scope="col">#</th>
         <th scope="col">Player</th>
         <th scope="col">Position</th>
@@ -40,6 +41,8 @@
     {{#stats}}
     <tbody class="all-stats-table">
       <tr class="stats-table" data-id="{{stat.id}}">
+        <td><button class="team-button"><img src="https://img.icons8.com/color/30/000000/star.png" class="on">
+        <img src="https://img.icons8.com/color/48/000000/filled-star.png" class="on hidden"></button></td>
         <th scope="row">{{stat.id}}</th>
         <td>{{stat.player}}</td>
         <td>{{stat.position}}</td>

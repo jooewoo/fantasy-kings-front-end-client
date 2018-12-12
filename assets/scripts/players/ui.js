@@ -5,7 +5,7 @@ const showPlayersTemplate = require('../templates/helpers/player-listings.handle
 // const config = require('../config.js')
 
 const createPlayerSuccess = (playerData) => {
-  console.log(playerData)
+  // console.log(playerData)
   store.player = playerData.player
   const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
   $('#content').html(showPlayersHtml)
@@ -13,7 +13,7 @@ const createPlayerSuccess = (playerData) => {
 
 const showAllPlayersSuccess = (playerData) => {
   store.players = playerData.players
-  console.log(store)
+  // console.log(store)
   const showPlayersHtml = showPlayersTemplate({ players: playerData.players })
   $('#content').html(showPlayersHtml)
 }
@@ -25,7 +25,7 @@ const getPlayerSuccess = (playerData) => {
 }
 
 const updatePlayerSuccess = (playerData) => {
-  console.log(playerData)
+  // console.log(playerData)
   const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
   $('#content').html(showPlayersHtml)
 }

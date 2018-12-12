@@ -1,44 +1,46 @@
 'use strict'
 const store = require('../store.js')
-const showPlayersTemplate = require('../templates/helpers/player-listings.handlebars')
+// const showPlayersTemplate = require('../templates/helpers/player-listings.handlebars')
 const showStatsTemplate = require('../templates/helpers/stat-listings.handlebars')
 const showTeamsTemplate = require('../templates/helpers/team-listings.handlebars')
 
 const createTeamSuccess = (playerData) => {
-  console.log(playerData)
+  // console.log(playerData)
   store.player = playerData.player
   const showTeamsHtml = showStatsTemplate({ players: playerData.team.stat })
-  $('.my-team').html(showTeamsHtml)
+  $('#stats-button-' + store.statId).removeClass('hidden')
+  $('.on-' + store.statId).addClass('hidden')
+  $('.my-fantasy-team').html(showTeamsHtml)
 }
 
 const showAllStatsSuccess = (statData) => {
   store.stats = statData.stats
-  console.log(statData.stats)
+  // console.log(statData.stats)
   const showStatsHtml = showStatsTemplate({ stats: statData.stats })
   $('#content').html(showStatsHtml)
 }
 
-const getPlayerSuccess = (playerData) => {
-  store.getPlayer = playerData.player
-  const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
-  $('#content').html(showPlayersHtml)
-}
+// const getPlayerSuccess = (playerData) => {
+//   store.getPlayer = playerData.player
+//   const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
+//   $('#content').html(showPlayersHtml)
+// }
 
-const updatePlayerSuccess = (playerData) => {
-  console.log(playerData)
-  const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
-  $('#content').html(showPlayersHtml)
-}
+// const updatePlayerSuccess = (playerData) => {
+//   console.log(playerData)
+//   const showPlayersHtml = showPlayersTemplate({ players: playerData.player })
+//   $('#content').html(showPlayersHtml)
+// }
 
-const deletePlayerSuccess = () => {
-  console.log(store)
-  const showPlayersHtml = showPlayersTemplate({ players: store.players })
+const deleteTeamSuccess = () => {
+  // console.log(store)
+  const showPlayersHtml = showStatsTemplate({ stats: store.teams })
   $('#content').html(showPlayersHtml)
   // $('#content').html(`You have successfully deleted ${store.playerId}`)
 }
 
 const showTeamSuccess = (teamData) => {
-  console.log(teamData.teams)
+  // console.log(teamData.teams)
   store.teams = teamData.teams
   const showTeamsHtml = showTeamsTemplate({ stats: teamData.teams })
   $('.my-fantasy-team').html(showTeamsHtml)
@@ -51,9 +53,7 @@ const failure = () => {
 module.exports = {
   createTeamSuccess,
   showAllStatsSuccess,
-  getPlayerSuccess,
-  updatePlayerSuccess,
-  deletePlayerSuccess,
+  deleteTeamSuccess,
   showTeamSuccess,
   failure
 }

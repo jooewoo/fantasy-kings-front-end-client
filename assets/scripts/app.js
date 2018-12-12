@@ -5,7 +5,6 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-
 const authEvents = require('./auth/event.js')
 const playersEvents = require('./players/event.js')
 const statsEvents = require('./stats/event.js')
