@@ -1,4 +1,4 @@
-{{#each this as |stat|}}
+{{#each this as |stats|}}
 
 <div class="all-stats-table">
   <table class="table table-hover">
@@ -37,42 +37,42 @@
       </tr>
     </thead>
 
-    {{#stat}}
+    {{#stats}}
     <tbody class="all-stats-table">
-      <tr class="stats-table" data-id="{{id}}">
-        <th scope="row">{{id}}</th>
-        <td>{{player}}</td>
-        <td>{{position}}</td>
-        <td>{{age}}</td>
-        <td>{{team}}</td>
-        <td>{{games_played}}</td>
-        <td>{{games_started}}</td>
-        <td>{{minutes}}</td>
-        <td>{{fg}}</td>
-        <td>{{fga}}</td>
-        <td>{{fg_percentage}}</td>
-        <td>{{three_pointers}}</td>
-        <td>{{three_point_attempts}}</td>
-        <td>{{three_point_percentage}}</td>
-        <td>{{two_pointers}}</td>
-        <td>{{two_point_attempts}}</td>
-        <td>{{two_point_percentage}}</td>
-        <td>{{efg}}</td>
-        <td>{{ft}}</td>
-        <td>{{fta}}</td>
-        <td>{{ft_percentage}}</td>
-        <td>{{orb}}</td>
-        <td>{{drb}}</td>
-        <td>{{trb}}</td>
-        <td>{{ast}}</td>
-        <td>{{stl}}</td>
-        <td>{{blk}}</td>
-        <td>{{tov}}</td>
-        <td>{{pf}}</td>
-        <td>{{points}}</td>
+      <tr class="stats-table" data-id="{{stat.id}}">
+        <th scope="row">{{stat.id}}</th>
+        <td>{{stat.player}}</td>
+        <td>{{stat.position}}</td>
+        <td>{{stat.age}}</td>
+        <td>{{stat.team}}</td>
+        <td>{{stat.games_played}}</td>
+        <td>{{stat.games_started}}</td>
+        <td>{{stat.minutes}}</td>
+        <td>{{stat.fg}}</td>
+        <td>{{stat.fga}}</td>
+        <td>{{stat.fg_percentage}}</td>
+        <td>{{stat.three_pointers}}</td>
+        <td>{{stat.three_point_attempts}}</td>
+        <td>{{stat.three_point_percentage}}</td>
+        <td>{{stat.two_pointers}}</td>
+        <td>{{stat.two_point_attempts}}</td>
+        <td>{{stat.two_point_percentage}}</td>
+        <td>{{stat.efg}}</td>
+        <td>{{stat.ft}}</td>
+        <td>{{stat.fta}}</td>
+        <td>{{stat.ft_percentage}}</td>
+        <td>{{stat.orb}}</td>
+        <td>{{stat.drb}}</td>
+        <td>{{stat.trb}}</td>
+        <td>{{stat.ast}}</td>
+        <td>{{stat.stl}}</td>
+        <td>{{stat.blk}}</td>
+        <td>{{stat.tov}}</td>
+        <td>{{stat.pf}}</td>
+        <td>{{stat.points}}</td>
       </tr>
     </tbody>
-    {{/stat}}
+    {{/stats}}
   </table>
 </div>
 

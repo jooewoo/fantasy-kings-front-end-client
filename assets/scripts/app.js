@@ -20,7 +20,7 @@ $(() => {
     $('#content').empty()
   })
   $('.project-2-v2').on('click', () => {
-    $('.ranking, .my-players, .show-stats-button, .season-averages, .season-totals').removeClass('hidden')
+    $('.ranking, .my-team, .show-stats-button, .season-averages, .season-totals').removeClass('hidden')
     $('.project-requirements').addClass('hidden')
     $('#content').empty()
   })

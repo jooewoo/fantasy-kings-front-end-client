@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-.stats-table {
+.all-stats-table {
   max-height: 500px;
   overflow: scroll;
   page-break-after: always;
@@ -10,13 +10,9 @@
   background-color: black;
 }
 
-.sidebar {
-  height: 800px;
-  text-align: center;
-}
-
 .main-body {
   text-align: center;
+  width: 85%;
 }
 
 .btn-group {
@@ -38,35 +34,42 @@
   border: 1px solid red;
   display: flex;
   flex-direction: column;
+  height: 800px;
+  text-align: center;
   width: 10%;
 
   .ranking {
     &:hover {
       background-color: red;
+      cursor: pointer;
     }
   }
 
-  .my-players {
+  .my-team {
     &:hover {
       background-color: red;
+      cursor: pointer;
     }
   }
 
   .show-stats-button {
     &:hover {
       background-color: red;
+      cursor: pointer;
     }
   }
 
   .season-averages {
     &:hover {
       background-color: red;
+      cursor: pointer;
     }
   }
 
   .season-totals {
     &:hover {
       background-color: red;
+      cursor: pointer;
     }
   }
 
@@ -83,10 +86,6 @@
       cursor: pointer;
     }
   }
-}
-
-.main-body {
-  width: 85%;
 }
 
 h1 {

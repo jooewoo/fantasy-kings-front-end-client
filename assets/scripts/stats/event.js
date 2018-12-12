@@ -5,26 +5,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
 
-const onCreatePlayer = (event) => {
-  event.preventDefault()
-  const playerData = getFormFields(event.target)
-  $(event.target).trigger('reset')
-  console.log(playerData)
-  api.createPlayer(playerData.player)
-    .then(ui.createPlayerSuccess)
-    .catch(ui.failure)
-}
-
-const onGetPlayer = (event) => {
-  event.preventDefault()
-  const playerData = getFormFields(event.target)
-  $(event.target).trigger('reset')
-  console.log(playerData)
-  api.getPlayer(playerData.player.id)
-    .then(ui.getPlayerSuccess)
-    .catch(ui.failure)
-}
-
 const onShowAllStats = (event) => {
   event.preventDefault()
   $(event.target).trigger('reset')
@@ -33,17 +13,16 @@ const onShowAllStats = (event) => {
     .catch(ui.failure)
 }
 
-const onUpdatePlayer = (event) => {
+const onCreateTeam = (event) => {
   event.preventDefault()
-  const playerData = getFormFields(event.target)
-  $(event.target).trigger('reset')
-  console.log(playerData)
-  api.updatePlayer(playerData)
-    .then(ui.updatePlayerSuccess)
+  store.statId = $(event.target).closest('tr').data('id')
+  console.log(store.statId)
+  api.createTeam(store)
+    .then(ui.createTeamSuccess)
     .catch(ui.failure)
 }
 
-const onDeletePlayer = (event) => {
+const onDeleteTeam = (event) => {
   event.preventDefault()
   const playerData = getFormFields(event.target)
   $(event.target).trigger('reset')
@@ -54,19 +33,24 @@ const onDeletePlayer = (event) => {
     .catch(ui.failure)
 }
 
+const onShowTeam = (event) => {
+  event.preventDefault()
+  api.showTeam()
+    .then(ui.showTeamSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
-  $('').on('submit', onCreatePlayer)
-  $('').on('submit', onGetPlayer)
   $('#show-stats-button').on('click', onShowAllStats)
-  $('').on('submit', onUpdatePlayer)
-  $('').on('submit', onDeletePlayer)
+  $('.content').on('click', '.stats-table', onCreateTeam)
+  $('').on('submit', onDeleteTeam)
+  $('.my-team').on('click', onShowTeam)
 }
 
 module.exports = {
-  onCreatePlayer,
-  onGetPlayer,
   onShowAllStats,
-  onUpdatePlayer,
-  onDeletePlayer,
+  onCreateTeam,
+  onDeleteTeam,
+  onShowTeam,
   addHandlers
 }
