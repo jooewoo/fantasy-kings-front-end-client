@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 const onSignUp = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
-  console.log(userData)
+  // console.log(userData)
   $(event.target).trigger('reset')
   api.signUp(userData)
     .then(ui.signUpSuccess)

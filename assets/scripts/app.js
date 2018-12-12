@@ -5,7 +5,6 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-
 const authEvents = require('./auth/event.js')
 const playersEvents = require('./players/event.js')
 const statsEvents = require('./stats/event.js')
@@ -20,7 +19,7 @@ $(() => {
     $('#content').empty()
   })
   $('.project-2-v2').on('click', () => {
-    $('.ranking, .my-players, .show-stats-button, .season-averages, .season-totals').removeClass('hidden')
+    $('.ranking, .my-team, .show-stats-button, .season-averages, .season-totals').removeClass('hidden')
     $('.project-requirements').addClass('hidden')
     $('#content').empty()
   })

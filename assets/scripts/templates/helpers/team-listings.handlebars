@@ -1,0 +1,83 @@
+{{#each this as |stats|}}
+
+<div class="all-stats-table">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">#</th>
+        <th scope="col">Player</th>
+        <th scope="col">Position</th>
+        <th scope="col">Age</th>
+        <th scope="col">Team</th>
+        <th scope="col">Games Played</th>
+        <th scope="col">Games Started</th>
+        <th scope="col">Minutes</th>
+        <th scope="col">FGM</th>
+        <th scope="col">FGA</th>
+        <th scope="col">FG%</th>
+        <th scope="col">3PM</th>
+        <th scope="col">3PA</th>
+        <th scope="col">3P%</th>
+        <th scope="col">2PM</th>
+        <th scope="col">2PA</th>
+        <th scope="col">2P%</th>
+        <th scope="col">eFG</th>
+        <th scope="col">FTM</th>
+        <th scope="col">FTA</th>
+        <th scope="col">FT%</th>
+        <th scope="col">ORB</th>
+        <th scope="col">DRB</th>
+        <th scope="col">TRB</th>
+        <th scope="col">Assists</th>
+        <th scope="col">Steals</th>
+        <th scope="col">Blocks</th>
+        <th scope="col">Turnovers</th>
+        <th scope="col">Personal Fouls</th>
+        <th scope="col">Points</th>
+      </tr>
+    </thead>
+
+    {{#stats}}
+    <tbody class="all-stats-table">
+      <tr class="stats-table" data-id="{{stat.id}}">
+        <td><button class="team-button"><img src="https://img.icons8.com/color/30/000000/star.png" class="on">
+        <img src="https://img.icons8.com/color/48/000000/filled-star.png" class="on hidden"></button></td>
+        <th scope="row">{{stat.id}}</th>
+        <td>{{stat.player}}</td>
+        <td>{{stat.position}}</td>
+        <td>{{stat.age}}</td>
+        <td>{{stat.team}}</td>
+        <td>{{stat.games_played}}</td>
+        <td>{{stat.games_started}}</td>
+        <td>{{stat.minutes}}</td>
+        <td>{{stat.fg}}</td>
+        <td>{{stat.fga}}</td>
+        <td>{{stat.fg_percentage}}</td>
+        <td>{{stat.three_pointers}}</td>
+        <td>{{stat.three_point_attempts}}</td>
+        <td>{{stat.three_point_percentage}}</td>
+        <td>{{stat.two_pointers}}</td>
+        <td>{{stat.two_point_attempts}}</td>
+        <td>{{stat.two_point_percentage}}</td>
+        <td>{{stat.efg}}</td>
+        <td>{{stat.ft}}</td>
+        <td>{{stat.fta}}</td>
+        <td>{{stat.ft_percentage}}</td>
+        <td>{{stat.orb}}</td>
+        <td>{{stat.drb}}</td>
+        <td>{{stat.trb}}</td>
+        <td>{{stat.ast}}</td>
+        <td>{{stat.stl}}</td>
+        <td>{{stat.blk}}</td>
+        <td>{{stat.tov}}</td>
+        <td>{{stat.pf}}</td>
+        <td>{{stat.points}}</td>
+      </tr>
+    </tbody>
+    {{/stats}}
+  </table>
+</div>
+
+
+{{/each}}
