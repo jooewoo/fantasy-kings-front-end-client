@@ -33,7 +33,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 
 
 ### ERD
-![ERD](.public/final_erd.png)
+![ERD]('.public/final_erd.png')
 ### User Stories
 * A user wants to create an account.
 * A user wants to sign in/ log out.
