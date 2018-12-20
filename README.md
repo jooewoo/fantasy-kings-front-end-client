@@ -17,6 +17,8 @@ The goal of this project was to set up an database for the 2017-2018 NBA season,
 5. Store them in .env with keys `SECRET_KEY_BASE_<DEVELOPMENT|TEST>` respectively.
 6. Set up a Heroku server
 7. Set up your database with the following:
+  - `bin/rails db:reset`
+    or you can
   - `bin/rails db:drop` (if it already exists)
   - `bin/rails db:create`
   - `bin/rails db:migrate`
@@ -33,7 +35,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 
 
 ### ERD
-![ERD]('./public/final_erd.png')
+![ERD](./public/final_erd.png)
 ### User Stories
 * A user wants to create an account.
 * A user wants to sign in/ log out.
@@ -106,4 +108,6 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * Ruby on Rails
 
 ## Author
+Made by Joseph Woo
 ## Acknowledgments
+I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my data with.
