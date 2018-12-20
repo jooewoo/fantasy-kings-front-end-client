@@ -13,7 +13,7 @@ const showAllStats = () => {
   })
 }
 
-const createTeam = (playerData) => {
+const createTeam = (teamDataId) => {
   // console.log(playerData)
   return $.ajax({
     url: config.apiUrl + '/teams/',
@@ -26,7 +26,7 @@ const createTeam = (playerData) => {
       {
         'team': {
           'user_id': store.user.id,
-          'stat_id': playerData.statId
+          'stat_id': teamDataId
         }
       }
 

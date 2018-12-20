@@ -16,6 +16,7 @@ const showAllPlayersSuccess = (playerData) => {
   // console.log(store)
   const showPlayersHtml = showPlayersTemplate({ players: playerData.players })
   $('#content').html(showPlayersHtml)
+  // $('all-stats-table').dataTables(showPlayersHtml)
 }
 
 const getPlayerSuccess = (playerData) => {

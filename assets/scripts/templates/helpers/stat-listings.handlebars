@@ -41,8 +41,14 @@
     {{#stat}}
     <tbody class="all-stats-table">
       <tr class="stats-table" data-id="{{id}}">
-        <td><button class="stats-button" data-id={{id}}><img src="https://img.icons8.com/color/30/000000/star.png" class="on-{{id}}">
-        <img src="https://img.icons8.com/color/30/000000/filled-star.png" class="on  hidden" id="stats-button-{{id}}"></button></td>
+        <td>
+          <button class="add-player-button" id="add-player-button-{{id}}" data-id={{id}}>
+            <img src="https://img.icons8.com/color/30/000000/star.png">
+          </button>
+          <button class="delete-player-button hidden" id="delete-player-button-{{id}}" data-id={{id}}>
+            <img src="https://img.icons8.com/color/30/000000/filled-star.png" class="stats-table-{{id}}">
+          </button>
+        </td>
         <th scope="row">{{id}}</th>
         <td>{{player}}</td>
         <td>{{position}}</td>
@@ -60,10 +66,10 @@
         <td>{{two_pointers}}</td>
         <td>{{two_point_attempts}}</td>
         <td>{{two_point_percentage}}</td>
-        <td>{{efg}}</td>
+        <td>{{eFG}}</td>
         <td>{{ft}}</td>
         <td>{{fta}}</td>
-        <td>{{ft_percentage}}</td>
+        <td>{{ftp}}</td>
         <td>{{orb}}</td>
         <td>{{drb}}</td>
         <td>{{trb}}</td>

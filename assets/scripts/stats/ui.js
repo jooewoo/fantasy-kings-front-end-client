@@ -3,19 +3,21 @@ const store = require('../store.js')
 // const showPlayersTemplate = require('../templates/helpers/player-listings.handlebars')
 const showStatsTemplate = require('../templates/helpers/stat-listings.handlebars')
 const showTeamsTemplate = require('../templates/helpers/team-listings.handlebars')
+// const dataTables = require('datatables')
 
 const createTeamSuccess = (playerData) => {
   // console.log(playerData)
   store.player = playerData.player
   const showTeamsHtml = showStatsTemplate({ players: playerData.team.stat })
-  $('#stats-button-' + store.statId).removeClass('hidden')
-  $('.on-' + store.statId).addClass('hidden')
+  $('#delete-player-button-' + store.statId).removeClass('hidden')
+  $('#add-player-button-' + store.statId).addClass('hidden')
   $('.my-fantasy-team').html(showTeamsHtml)
 }
 
 const showAllStatsSuccess = (statData) => {
   store.stats = statData.stats
   // console.log(statData.stats)
+  // $('#content').dataTables({ stats: statData.stats })
   const showStatsHtml = showStatsTemplate({ stats: statData.stats })
   $('#content').html(showStatsHtml)
 }

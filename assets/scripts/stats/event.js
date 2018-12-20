@@ -1,6 +1,6 @@
 'use strict'
 
-const getFormFields = require('../../../lib/get-form-fields.js')
+// const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
@@ -15,9 +15,10 @@ const onShowAllStats = (event) => {
 
 const onCreateTeam = (event) => {
   event.preventDefault()
-  store.statId = $(event.target).closest('tr').data('id')
+  const teamId = $(event.currentTarget).data('id')
+  store.statId = $(event.currentTarget).data('id')
   // console.log(store.statId)
-  api.createTeam(store)
+  api.createTeam(teamId)
     .then(ui.createTeamSuccess)
     .catch(ui.failure)
 }
@@ -40,8 +41,8 @@ const onShowTeam = (event) => {
 
 const addHandlers = () => {
   $('#show-stats-button').on('click', onShowAllStats)
-  $('.content').on('click', '.stats-button', onCreateTeam)
-  $('').on('submit', onDeleteTeam)
+  $('.content').on('click', '.add-player-button', onCreateTeam)
+  $('.content').on('click', '.delete-player-button', onCreateTeam)
   $('.my-team').on('click', onShowTeam)
 }
 

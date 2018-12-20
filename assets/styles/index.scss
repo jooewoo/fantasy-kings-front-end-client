@@ -32,6 +32,7 @@
 
 .sidebar {
   border: 1px solid red;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   height: 800px;
@@ -41,35 +42,30 @@
   .ranking {
     &:hover {
       background-color: red;
-      cursor: pointer;
     }
   }
 
-  .my-team {
+  .my-players {
     &:hover {
       background-color: red;
-      cursor: pointer;
     }
   }
 
   .show-stats-button {
     &:hover {
       background-color: red;
-      cursor: pointer;
     }
   }
 
   .season-averages {
     &:hover {
       background-color: red;
-      cursor: pointer;
     }
   }
 
   .season-totals {
     &:hover {
       background-color: red;
-      cursor: pointer;
     }
   }
 
@@ -88,6 +84,18 @@
   }
 }
 
+.add-player-button {
+  background-color: Transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.delete-player-button {
+  background-color: Transparent;
+  border: 0;
+  cursor: pointer;
+}
+
 h1 {
   color: #fff;
 }
@@ -96,20 +104,6 @@ h1 {
   border: 1px solid blue;
 }
 
-.team-button {
-  background-color: Transparent;
-  border: 0;
-}
-
-.stats-button {
-  background-color: Transparent;
-  border: 0;
-}
-
 .hidden {
   display: none;
-}
-
-table {
-  width: 100%;
 }
