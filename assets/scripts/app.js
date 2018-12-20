@@ -8,7 +8,7 @@
 const authEvents = require('./auth/event.js')
 const playersEvents = require('./players/event.js')
 const statsEvents = require('./stats/event.js')
-const store = require('./store.js')
+// const store = require('./store.js')
 
 $(() => {
   authEvents.addHandlers()
