@@ -8,6 +8,7 @@
 const authEvents = require('./auth/event.js')
 const playersEvents = require('./players/event.js')
 const statsEvents = require('./stats/event.js')
+const store = require('./store.js')
 
 $(() => {
   authEvents.addHandlers()
@@ -23,4 +24,10 @@ $(() => {
     $('.project-requirements').addClass('hidden')
     $('#content').empty()
   })
+  // $('.stats-table-1').click(() => {
+  //   $(`.stats-table-1`).toggle()
+  // })
+  // $('.content').click(`#stats-table-${store.statsId}`, () => {
+  //   $(`#stats-table-${store.statsId}`).toggle()
+  // })
 })
