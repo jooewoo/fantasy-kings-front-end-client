@@ -24,10 +24,4 @@ $(() => {
     $('.project-requirements').addClass('hidden')
     $('#content').empty()
   })
-  // $('.stats-table-1').click(() => {
-  //   $(`.stats-table-1`).toggle()
-  // })
-  // $('.content').click(`#stats-table-${store.statsId}`, () => {
-  //   $(`#stats-table-${store.statsId}`).toggle()
-  // })
 })

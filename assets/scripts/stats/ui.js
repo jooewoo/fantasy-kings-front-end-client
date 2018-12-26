@@ -6,7 +6,7 @@ const showTeamsTemplate = require('../templates/helpers/team-listings.handlebars
 // const dataTables = require('datatables')
 
 const createTeamSuccess = (playerData) => {
-  // console.log(playerData)
+  console.log(playerData)
   store.player = playerData.player
   const showTeamsHtml = showStatsTemplate({ players: playerData.team.stat })
   $('#delete-player-button-' + store.statId).removeClass('hidden')
