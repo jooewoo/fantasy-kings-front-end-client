@@ -13,7 +13,7 @@ const showAllStats = () => {
   })
 }
 
-const createTeam = (teamDataId) => {
+const createPlayerToTeam = (playerId) => {
   // console.log(playerData)
   return $.ajax({
     url: config.apiUrl + '/teams/',
@@ -26,7 +26,7 @@ const createTeam = (teamDataId) => {
       {
         'team': {
           'user_id': store.user.id,
-          'stat_id': teamDataId
+          'stat_id': playerId
         }
       }
 
@@ -34,10 +34,10 @@ const createTeam = (teamDataId) => {
   })
 }
 
-const deleteTeam = (playerData) => {
+const deletePlayerFromTeam = (playerId) => {
   // console.log(playerData)
   return $.ajax({
-    url: config.apiUrl + '/teams/' + playerData,
+    url: config.apiUrl + '/teams/' + playerId,
     method: 'DELETE',
     contentType: 'application/json',
     headers: {
@@ -59,7 +59,7 @@ const showTeam = () => {
 
 module.exports = {
   showAllStats,
-  createTeam,
-  deleteTeam,
+  createPlayerToTeam,
+  deletePlayerFromTeam,
   showTeam
 }

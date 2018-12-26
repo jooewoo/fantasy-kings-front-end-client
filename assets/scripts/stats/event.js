@@ -18,7 +18,7 @@ const onCreateTeam = (event) => {
   const teamId = $(event.currentTarget).data('id')
   store.statId = $(event.currentTarget).data('id')
   // console.log(store.statId)
-  api.createTeam(teamId)
+  api.createPlayerToTeam(teamId)
     .then(ui.createTeamSuccess)
     .catch(ui.failure)
 }
@@ -27,7 +27,7 @@ const onDeleteTeam = (event) => {
   event.preventDefault()
   store.statId = $(event.target).closest('tr').data('id')
   // console.log(store.statId)
-  api.deletePlayer(store.statId)
+  api.deletePlayerFromTeam(store.statId)
     .then(ui.deleteTeamSuccess)
     .catch(ui.failure)
 }
@@ -42,7 +42,7 @@ const onShowTeam = (event) => {
 const addHandlers = () => {
   $('#show-stats-button').on('click', onShowAllStats)
   $('.content').on('click', '.add-player-button', onCreateTeam)
-  $('.content').on('click', '.delete-player-button', onCreateTeam)
+  $('.content').on('click', '.delete-player-button', onDeleteTeam)
   $('.my-team').on('click', onShowTeam)
 }
 
