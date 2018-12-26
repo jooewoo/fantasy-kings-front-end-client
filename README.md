@@ -49,8 +49,13 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 * A user wants to be able to find a player by searching in a search bar.
 * A user wants to see more information about the player.
 
-## Wireframes/User Stories
-### User Stories
+## Wireframes
+Sign Up/ Sign In
+![Wireframe](./public/project-2-wireframe.PNG)
+All Players
+![Wireframe](./public/project-2-wireframe-3.PNG)
+My Team
+![Wireframe](./public/project-2-wireframe-2.PNG)
 
 ## API
 ### Authentication
