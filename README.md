@@ -113,6 +113,6 @@ My Team
 * Ruby on Rails
 
 ## Author
-Made by Joseph Woo
+Joseph Woo
 ## Acknowledgments
 I want to thank [Basketball Reference](https://www.basketball-reference.com/) for providing a nice csv file that I could seed my data with.
