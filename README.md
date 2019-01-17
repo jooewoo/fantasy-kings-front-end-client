@@ -35,7 +35,7 @@ After the user stories, I decided to make a basic wireframe. Finally, I made a t
 
 
 ### ERD
-![ERD](./public/final_erd.png)
+![ERD](./public/final-erd.png)
 ### User Stories
 * A user wants to create an account.
 * A user wants to sign in/ log out.
@@ -73,6 +73,7 @@ My Team
 
 | Verb   | URI Pattern              | Controller#Action   |
 |--------|--------------------------|---------------------|
+| POST   | `/teams`                 | `teams#create`      |
 | GET    | `/teams`                 | `teams#index`       |
 | DELETE | `/teams/:id`             | `teams#destroy`     |
 
