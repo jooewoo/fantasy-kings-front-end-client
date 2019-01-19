@@ -9,12 +9,14 @@ const signUpSuccess = (signUpResponse) => {
 
 const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
+
   $('.btn-group-1, #change-password-dropdown, #sign-out-button').show()
   $('div[style*=block]').removeAttr('style')
   $('div.btn-group-1').removeClass('hidden')
   $('#sign-up-form-dropdown, #sign-in-form-dropdown, #sign-up-failure, #sign-up-success, #sign-in-failure').hide()
   $('.btn-group-1, #sign-in-success, .project-2, .project-2-v2').removeClass('hidden')
   clearTimeout(authMessage('You have successfully signed in!'))
+
 }
 
 const changePasswordSuccess = () => {
