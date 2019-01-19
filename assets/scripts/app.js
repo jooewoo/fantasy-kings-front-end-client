@@ -28,4 +28,8 @@ $(() => {
     $('.project-requirements, #player-message').addClass('hidden')
     $('#content').empty()
   })
+
+  $('.carousel').carousel({
+    interval: 3000
+  })
 })
