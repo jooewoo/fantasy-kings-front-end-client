@@ -1,7 +1,7 @@
 # Fantasy Basketball Full Stack Project- Project Two by Joe Woo WDI Cohort 28
 
 ## 2017/2018 NBA Stats API
-The goal of this project was to set up an database for the 2017-2018 NBA season, and to provide a useful tool for fantasy players. This app allows you to remind youreslf how a player did in the previous year. Also, you can reflect your previous choices in previous years, and re-evaluate which players you would choose in which rounds. One thing to note is that p
+The goal of this project was to set up an database for the 2017-2018 NBA season, and to provide a useful tool for fantasy players. This app allows you to remind youreslf how a player did in the previous year. Also, you can reflect your previous choices in previous years, and re-evaluate which players you would choose in which rounds. One thing to note is that players are listed in descending order based on points scored.
 
 ## Installation Guide
 ### Front End Installation(Current Repo)
