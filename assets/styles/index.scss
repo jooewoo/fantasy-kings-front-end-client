@@ -7,12 +7,18 @@ $slate-gray: rgb(108, 117, 125);
 $light-blue: #cc35ff;
 $white: #fff;
 $black: #000;
+$peru: #c3993d;
+$green: #98e200;
 
 // .all-stats-table {
 //   max-height: 500px;
 //   overflow: scroll;
 //   page-break-after: always;
 // }
+
+.btn-secondary {
+  background-color: #c3993d;
+}
 
 .navbar {
   background-color: $black;
@@ -141,7 +147,7 @@ $black: #000;
 }
 
 h1 {
-  color: $white;
+  background-image: url('./public/fantasy-logo.png');
 }
 
 // .players {
