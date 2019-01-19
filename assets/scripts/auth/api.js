@@ -45,9 +45,33 @@ const signOut = (inputData) => {
   })
 }
 
+const showAllStats = () => {
+  return $.ajax({
+    url: config.apiUrl + '/stats',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json'
+  })
+}
+
+const showTeam = () => {
+  return $.ajax({
+    url: config.apiUrl + '/teams/',
+    method: 'GET',
+    contentType: 'application/json',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  showAllStats,
+  showTeam
 }

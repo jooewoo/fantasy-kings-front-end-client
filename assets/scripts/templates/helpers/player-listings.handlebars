@@ -8,20 +8,22 @@
         <th scope="col">Personal Info</th>
         <th scope="col">Team</th>
         <th scope="col">Stats</th>
+        <th scope="col">League</th>
       </tr>
     </thead>
 
-  {{#player}}
     <tbody>
-      <tr>
-        <th scope="row">{{id}}</th>
-        <td>{{first_name}} {{last_name}}</td>
-        <td>{{personal_info}}</td>
-        <td>{{team}}</td>
-        <td>{{stats}}</td>
-      </tr>
+      {{#player}}
+          <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{first_name}} {{last_name}}</td>
+            <td>{{personal_info}}</td>
+            <td>{{team}}</td>
+            <td>{{stats}}</td>
+            <td>{{league}}</td>
+          </tr>
+      {{/player}}
     </tbody>
-  {{/player}}
   </table>
 
 

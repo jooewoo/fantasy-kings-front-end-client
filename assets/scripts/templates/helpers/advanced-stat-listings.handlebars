@@ -7,23 +7,40 @@
       <th>#</th>
       <th>Player</th>
       <th>Position</th>
+      <th>Age</th>
+      <th>Team</th>
       <th>Games Played</th>
+      <th>Games Started</th>
+      <th>Minutes</th>
+      <th>FGM</th>
+      <th>FGA</th>
       <th>FG%</th>
-      <th>FT%</th>
       <th>3PM</th>
+      <th>3PA</th>
+      <th>3P%</th>
+      <th>2PM</th>
+      <th>2PA</th>
+      <th>2P%</th>
+      <th>eFG</th>
+      <th>FTM</th>
+      <th>FTA</th>
+      <th>FT%</th>
+      <th>ORB</th>
+      <th>DRB</th>
+      <th>TRB</th>
       <th>Points</th>
-      <th>Rebounds</th>
       <th>Assists</th>
       <th>Steals</th>
       <th>Blocks</th>
       <th>Turnovers</th>
+      <th>Personal Fouls</th>
     </tr>
   </thead>
 
   <tbody class="all-stats-table">
     {{#stat}}
-      <tr data-id="{{id}}" class="stat-player-{{id}}">
-        <td data-id="{{id}}">
+      <tr data-id="{{id}}">
+        <td>
           <button class="add-player-button" id="add-player-button-{{id}}" data-id={{id}}>
             <img src="https://img.icons8.com/color/30/000000/star.png">
           </button>
@@ -34,16 +51,33 @@
         <th scope="row">{{id}}</th>
         <td>{{player}}</td>
         <td>{{position}}</td>
+        <td>{{age}}</td>
+        <td>{{team}}</td>
         <td>{{games_played}}</td>
+        <td>{{games_started}}</td>
+        <td>{{minutes}}</td>
+        <td>{{fg}}</td>
+        <td>{{fga}}</td>
         <td>{{fg_percentage}}</td>
-        <td>{{ftp}}</td>
         <td>{{three_pointers}}</td>
-        <td>{{points}}</td>
+        <td>{{three_point_attempts}}</td>
+        <td>{{three_point_percentage}}</td>
+        <td>{{two_pointers}}</td>
+        <td>{{two_point_attempts}}</td>
+        <td>{{two_point_percentage}}</td>
+        <td>{{eFG}}</td>
+        <td>{{ft}}</td>
+        <td>{{fta}}</td>
+        <td>{{ftp}}</td>
+        <td>{{orb}}</td>
+        <td>{{drb}}</td>
         <td>{{trb}}</td>
+        <td>{{points}}</td>
         <td>{{ast}}</td>
         <td>{{stl}}</td>
         <td>{{blk}}</td>
         <td>{{tov}}</td>
+        <td>{{pf}}</td>
       </tr>
     {{/stat}}
   </tbody>
