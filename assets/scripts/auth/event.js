@@ -2,15 +2,21 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+// const store = require('../store.js')
 
 const onSignUp = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
-  // console.log(userData)
   $(event.target).trigger('reset')
   api.signUp(userData)
     .then(ui.signUpSuccess)
-    .catch(ui.failure)
+    .then(() => api.signIn(userData))
+    .then(ui.signInSuccess)
+    .then(() => api.showAllStats())
+    .then(ui.showAllStatsSuccess)
+    .then(() => api.showTeam())
+    .then(ui.showTeamSuccess)
+    .catch(ui.signUpFailure)
 }
 
 const onSignIn = (event) => {
@@ -19,7 +25,11 @@ const onSignIn = (event) => {
   $(event.target).trigger('reset')
   api.signIn(userData)
     .then(ui.signInSuccess)
-    .catch(ui.failure)
+    .then(() => api.showAllStats())
+    .then(ui.showAllStatsSuccess)
+    .then(() => api.showTeam())
+    .then(ui.showTeamSuccess)
+    .catch(ui.signInFailure)
 }
 
 const onChangePassword = (event) => {
@@ -28,12 +38,26 @@ const onChangePassword = (event) => {
   $(event.target).trigger('reset')
   api.changePassword(userData)
     .then(ui.changePasswordSuccess)
-    .catch(ui.failure)
+    .catch(ui.changePasswordFailure)
 }
 
 const onSignOut = (event) => {
   api.signOut()
     .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
+const onShowAllStats = (event) => {
+  event.preventDefault()
+  api.showAllStats()
+    .then(ui.showAllStatsSuccess)
+    .catch(ui.failure)
+}
+
+const onShowTeam = (event) => {
+  event.preventDefault()
+  api.showTeam()
+    .then(ui.showTeamSuccess)
     .catch(ui.failure)
 }
 
@@ -45,7 +69,7 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  onSignUp,
-  onSignIn,
+  onShowAllStats,
+  onShowTeam,
   addHandlers
 }

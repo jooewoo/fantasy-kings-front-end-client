@@ -126,12 +126,13 @@
 
             <div class="alerts">
               <span class="badge badge-pill badge-dark message-auth hidden"></span>
-              <span class="badge badge-pill badge-secondary message-auth-failure"></span>
+              <span class="badge badge-pill badge-secondary message-auth-failure hidden"></span>
               <span class="badge badge-pill badge-dark player-message"></span>
-              <span class="badge badge-pill badge-secondary player-message-failure"></span>
+              <span class="badge badge-pill badge-secondary player-message-failure hidden"></span>
             </div>
 
             <div id="player-message">
+              <h2>Welcome</h2>
               <div class="">
                 Welcome to my fantasy app. At the moment, it is in it's early stages and this app only displays NBA Basketball stats from the 2017-2018 season.
               </div>
@@ -151,14 +152,14 @@
                   <input name="player[team]" type="text" id="team" class="player" placeholder="team" required>
                   <input name="player[stats]" type="text" id="stats" class="player" placeholder="stats" required>
                   <input name="player[league]" type="text" id="league" class="player" placeholder="league" required>
-                  <input type="submit" class="create-player-form" placeholder="Submit">
+                  <input type="submit" class="create-player-form btn btn-secondary btn-sm m-1" placeholder="Submit">
                 </form>
               </div>
 
               <div class="get-player-form">
                 <form id="get-player-form">Get Player <br>
                   <input name="player[id]" type="text" id="player_id" class="player" placeholder="player_id" required>
-                  <input type="submit" class="get-player-form" placeholder="Submit" required>
+                  <input type="submit" class="get-player-form btn btn-secondary btn-sm m-1" placeholder="Submit" required>
                 </form>
               </div>
 
@@ -171,18 +172,18 @@
                   <input name="player[team]" type="text" class="team" class="player" placeholder="team" required>
                   <input name="player[stats]" type="text" class="stats" class="player" placeholder="stats" required>
                   <input name="player[league]" type="text" class="league" class="player" placeholder="league" required>
-                  <input type="submit" class="update-player-form" placeholder="Submit">
+                  <input type="submit" class="update-player-form btn btn-secondary btn-sm m-1" placeholder="Submit">
                 </form>
               </div>
 
               <div class="delete-player-form">
                 <form id="delete-player-form">Delete Player <br>
                   <input name="player[id]" type="text" class="player_id" class="player" placeholder="player_id" required>
-                  <input type="submit" class="delete-player-form" placeholder="Submit">
+                  <input type="submit" class="delete-player-form btn btn-secondary btn-sm m-1" placeholder="Submit">
                 </form>
               </div>
 
-              <button id="show-players-button-id" class="show-players-button" type="button">
+              <button id="show-players-button-id" class="show-players-button btn btn-secondary btn-sm m-1" type="button">
                 Show All Player
               </button>
             </div>

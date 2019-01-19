@@ -7,9 +7,10 @@ const store = require('../store.js')
 
 const onShowAllStats = (event) => {
   event.preventDefault()
-  $(event.target).trigger('reset')
   api.showAllStats()
     .then(ui.showAllStatsSuccess)
+    .then(() => api.showTeam())
+    .then(ui.updateTeamId)
     .catch(ui.failure)
 }
 
@@ -17,18 +18,23 @@ const onCreateTeam = (event) => {
   event.preventDefault()
   const teamId = $(event.currentTarget).data('id')
   store.statId = $(event.currentTarget).data('id')
-  // console.log(store.statId)
+
   api.createPlayerToTeam(teamId)
     .then(ui.createTeamSuccess)
+    .then(() => api.showTeam())
+    .then(ui.updateTeamId)
     .catch(ui.failure)
 }
 
 const onDeleteTeam = (event) => {
   event.preventDefault()
-  store.statId = $(event.target).closest('tr').data('id')
-  // console.log(store.statId)
-  api.deletePlayerFromTeam(store.statId)
+  const teamId = $(event.target).closest('tr').data('id')
+  store.deleteId = $(event.target).closest('td').data('id')
+
+  api.deletePlayerFromTeam(teamId)
     .then(ui.deleteTeamSuccess)
+    .then(() => api.showTeam())
+    .then(ui.updateTeamId)
     .catch(ui.failure)
 }
 

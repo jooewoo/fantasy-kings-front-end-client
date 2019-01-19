@@ -1,16 +1,38 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 
-.all-stats-table {
-  max-height: 500px;
-  overflow: scroll;
-  page-break-after: always;
-}
+$midnight-blue: #013369;
+$new-blue: #2052a2;
+$slate-gray: rgb(108, 117, 125);
+$light-blue: #cc35ff;
+$white: #fff;
+$black: #000;
+
+// .all-stats-table {
+//   max-height: 500px;
+//   overflow: scroll;
+//   page-break-after: always;
+// }
 
 .navbar {
-  background-color: black;
+  background-color: $black;
+  font-family: 'Cabin', sans-serif;
+
+  .sign-up-form {
+    text-align: center;
+  }
+
+  .sign-in-form {
+    text-align: center;
+  }
+
+  .change-password-form {
+    text-align: center;
+  }
 }
 
 .main-body {
+  font-family: 'Cabin', sans-serif;
   text-align: center;
   width: 85%;
 }
@@ -24,36 +46,58 @@
 }
 
 .big-body {
-  border: 1px solid black;
+  // border: 1px solid black;
+  align-items: stretch;
   display: flex;
+  min-height: calc(100vh - 72px);
   width: 100%;
   // flex-direction: column;
+
+  .alerts {
+    font-size: 25px;
+  }
 }
 
 .sidebar {
-  border: 1px solid red;
-  cursor: pointer;
+  background-color: $slate-gray;
+  color: $white;
   display: flex;
   flex-direction: column;
-  height: 800px;
+  // height: 900px;
+  opacity: 0.5;
   text-align: center;
   width: 10%;
 
-  .ranking {
+  .welcome {
+    cursor: pointer;
+
     &:hover {
-      background-color: red;
+      background-color: $black;
     }
   }
 
-  .my-players {
+  .ranking {
+    cursor: pointer;
+
     &:hover {
-      background-color: red;
+      background-color: $black;
+    }
+  }
+
+  .my-team {
+    border-top: 1px solid $white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $black;
     }
   }
 
   .show-stats-button {
+    cursor: pointer;
+
     &:hover {
-      background-color: red;
+      background-color: $black;
     }
   }
 
@@ -71,14 +115,14 @@
 
   .project-2 {
     &:hover {
-      background-color: red;
+      background-color: $black;
       cursor: pointer;
     }
   }
 
   .project-2-v2 {
     &:hover {
-      background-color: red;
+      background-color: $black;
       cursor: pointer;
     }
   }
@@ -97,13 +141,22 @@
 }
 
 h1 {
-  color: #fff;
+  color: $white;
 }
 
-.players {
-  border: 1px solid blue;
+// .players {
+//   border: 1px solid blue;
+// }
+
+.content {
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .hidden {
   display: none;
+}
+
+.flex {
+  display: flex;
 }

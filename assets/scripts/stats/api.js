@@ -14,7 +14,6 @@ const showAllStats = () => {
 }
 
 const createPlayerToTeam = (playerId) => {
-  // console.log(playerData)
   return $.ajax({
     url: config.apiUrl + '/teams/',
     method: 'POST',
@@ -34,10 +33,9 @@ const createPlayerToTeam = (playerId) => {
   })
 }
 
-const deletePlayerFromTeam = (playerId) => {
-  // console.log(playerData)
+const deletePlayerFromTeam = (teamId) => {
   return $.ajax({
-    url: config.apiUrl + '/teams/' + playerId,
+    url: config.apiUrl + '/teams/' + teamId,
     method: 'DELETE',
     contentType: 'application/json',
     headers: {
