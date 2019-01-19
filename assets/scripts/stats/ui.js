@@ -12,7 +12,7 @@ const createTeamSuccess = (playerData) => {
   store.teamId = playerData.team.id
 
   toggleStar('hide', playerData.team)
-
+  $('.welcome-message').addClass('hidden')
   clearTimeout(playerMessage())
 }
 
@@ -21,6 +21,7 @@ const showAllStatsSuccess = (statData) => {
   const showStatsHtml = showStatsTemplate({ stats: statData.stats })
   $('#content').html(showStatsHtml)
 
+  $('.welcome-message').addClass('hidden')
   hideStar(store.signInTeam)
   $('.table').DataTable()
   clearTimeout(playerMessage())

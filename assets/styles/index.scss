@@ -15,6 +15,11 @@ $green: #98e200;
 //   overflow: scroll;
 //   page-break-after: always;
 // }
+.welcome-message {
+  padding-left: 10px;
+  text-align: left;
+  width: 80%;
+}
 
 .btn-secondary {
   background-color: #c3993d !important;
@@ -36,7 +41,7 @@ $green: #98e200;
 
 .nets {
   height: 400px !important;
-  width: 300px !important;
+  width: 370px !important;
 }
 
 .cavs {

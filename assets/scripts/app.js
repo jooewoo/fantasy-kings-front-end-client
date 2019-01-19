@@ -17,15 +17,21 @@ $(() => {
   playersEvents.addHandlers()
   statsEvents.addHandlers()
 
+  $('.welcome').on('click', () => {
+    $('.welcome-message').removeClass('hidden')
+    $('.ranking, .my-team, .show-stats-button, .season-averages, .season-totals, .project-requirements').addClass('hidden')
+    $('#content, .my-fantasy-team').empty()
+  })
+
   $('.project-2').on('click', () => {
     $('.project-requirements').removeClass('hidden')
-    $('.ranking, .my-team, .show-stats-button, .season-averages, .season-totals, #player-message').addClass('hidden')
+    $('.ranking, .my-team, .show-stats-button, .season-averages, .season-totals, #player-message, .carousel, .welcome-message').addClass('hidden')
     $('#content, .my-fantasy-team').empty()
   })
 
   $('.project-2-v2').on('click', () => {
     $('.ranking, .my-team, .show-stats-button, .season-averages, .season-totals').removeClass('hidden')
-    $('.project-requirements, #player-message').addClass('hidden')
+    $('.project-requirements, #player-message, .carousel').addClass('hidden')
     $('#content').empty()
   })
 
