@@ -8,6 +8,8 @@ const onSignUp = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
+  $('#sign-up-in').trigger('reset')
+
   api.signUp(userData)
     .then(ui.signUpSuccess)
     .then(() => api.signIn(userData))
@@ -23,6 +25,8 @@ const onSignIn = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
+  $('#sign-up-form').trigger('reset')
+
   api.signIn(userData)
     .then(ui.signInSuccess)
     .then(() => api.showAllStats())
@@ -42,6 +46,9 @@ const onChangePassword = (event) => {
 }
 
 const onSignOut = (event) => {
+  $('#change-password-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
+  $('#sign-up-form').trigger('reset')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
