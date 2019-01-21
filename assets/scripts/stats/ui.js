@@ -11,8 +11,8 @@ const playerMessageFailure = require('../filter-data/player-message-failure.js')
 const createTeamSuccess = (playerData) => {
   store.teamId = playerData.team.id
 
-  toggleStar('hide', playerData.team)
   $('.welcome-message').addClass('hidden')
+  toggleStar('hide', playerData.team)
   clearTimeout(playerMessage())
 }
 
