@@ -41,13 +41,13 @@ const showTeamSuccess = (teamData) => {
     $('.player-message').html('You have no players on your team. Please click on Players and add some players to your team!')
     clearTimeout(playerMessage())
   } else {
-    $('.player-message').html('You have successfully gotten the stats for your team!')
-    clearTimeout(playerMessage())
     const showTeamsHtml = showTeamsTemplate({ stats: teamData.teams })
     $('#content').html(showTeamsHtml)
     teamData.teams.map(player => {
       toggleStar('hide', player)
     })
+    $('.player-message').html('You have successfully gotten the stats for your team!')
+    clearTimeout(playerMessage())
     $('.table').DataTable()
   }
 }
