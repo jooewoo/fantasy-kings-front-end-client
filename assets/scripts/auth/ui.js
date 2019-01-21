@@ -25,7 +25,7 @@ const changePasswordSuccess = () => {
 const signOutSuccess = () => {
   $('.btn-group-1, .project-requirements, #sign-in-success, #sign-up-success, #sign-up-failure, #change-password-success, #change-password-failure').addClass('hidden')
   $('#sign-up-form-dropdown, #sign-in-form-dropdown').show()
-  $('#sign-out-success').removeClass('hidden')
+  $('#sign-out-success, .welcome-message, .carousel').removeClass('hidden')
   $('#content, .my-fantasy-team').empty()
   $('.my-team, .show-stats-button, .project-2, .project-2-v2').addClass('hidden')
   $('.change-password-form').trigger('reset')

@@ -11,9 +11,9 @@ const playerMessageFailure = require('../filter-data/player-message-failure.js')
 const createTeamSuccess = (playerData) => {
   store.teamId = playerData.team.id
 
-  $('.welcome-message').addClass('hidden')
   toggleStar('hide', playerData.team)
   clearTimeout(playerMessage())
+  $('.welcome-message').addClass('hidden')
 }
 
 const showAllStatsSuccess = (statData) => {
@@ -48,6 +48,7 @@ const showTeamSuccess = (teamData) => {
     })
     $('.player-message').html('You have successfully gotten the stats for your team!')
     clearTimeout(playerMessage())
+    $('.welcome-message').addClass('hidden')
     $('.table').DataTable()
   }
 }
