@@ -8,7 +8,7 @@ const onSignUp = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
-  $('#sign-up-in').trigger('reset')
+  $('#sign-up-form').trigger('reset')
 
   api.signUp(userData)
     .then(ui.signUpSuccess)
@@ -26,6 +26,7 @@ const onSignIn = (event) => {
   const userData = getFormFields(event.target)
   $(event.target).trigger('reset')
   $('#sign-up-form').trigger('reset')
+  console.log(userData)
 
   api.signIn(userData)
     .then(ui.signInSuccess)
@@ -73,6 +74,10 @@ const addHandlers = () => {
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
+
+  $('.input-field-clear-class').on('click', () => {
+    $('.input-field-clear').val('')
+  })
 }
 
 module.exports = {

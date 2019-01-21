@@ -16,7 +16,6 @@ const signInSuccess = (signInResponse) => {
   $('#sign-up-form-dropdown, #sign-in-form-dropdown, #sign-up-failure, #sign-up-success, #sign-in-failure').hide()
   $('.btn-group-1, #sign-in-success, .project-2, .project-2-v2').removeClass('hidden')
   clearTimeout(authMessage('You have successfully signed in!'))
-
 }
 
 const changePasswordSuccess = () => {

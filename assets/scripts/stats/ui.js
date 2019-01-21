@@ -18,7 +18,7 @@ const createTeamSuccess = (playerData) => {
 
 const showAllStatsSuccess = (statData) => {
   store.stats = statData.stats
-  const showStatsHtml = showStatsTemplate({ stats: statData.stats })
+  const showStatsHtml = showStatsTemplate({ stats: store.signInStats })
   $('#content').html(showStatsHtml)
 
   $('.welcome-message').addClass('hidden')

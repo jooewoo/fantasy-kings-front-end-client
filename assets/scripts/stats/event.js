@@ -7,6 +7,7 @@ const store = require('../store.js')
 
 const onShowAllStats = (event) => {
   event.preventDefault()
+  ui.showAllStatsSuccess(store.signInStats)
   api.showAllStats()
     .then(ui.showAllStatsSuccess)
     .then(() => api.showTeam())
